@@ -6,14 +6,26 @@
 
 .App {
   text-align: center;
+  /* background-color: #61dafb; */
+}
+
+.DarkMode {
+  background-color: black;
+  color: white;
+}
+
+.LightMode {
+  background-color: wheat;
+  color: black;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
 .Link{
-  color: #61dafb;
+  /* color: green; */
   text-decoration: none;
 }
 
