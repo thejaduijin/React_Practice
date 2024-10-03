@@ -6,7 +6,6 @@
 
 .App {
   text-align: center;
-  /* background-color: #61dafb; */
 }
 
 .DarkMode {
@@ -24,7 +23,7 @@
   pointer-events: none;
 }
 
-.Link{
+.Link {
   /* color: green; */
   text-decoration: none;
 }

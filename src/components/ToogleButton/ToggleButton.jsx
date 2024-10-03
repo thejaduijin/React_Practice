@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./ToggleButton.css"
 
 function ToggleButton(props) {
-    // const [isToggled, setIsToggled] = useState(false);
-
     return (
         <>
             <label class="switch">
