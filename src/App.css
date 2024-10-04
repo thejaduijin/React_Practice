@@ -8,6 +8,11 @@
   text-align: center;
 }
 
+
+.Link {
+  text-decoration: none;
+}
+
 .DarkMode {
   background-color: black;
   color: white;
@@ -18,15 +23,20 @@
   color: black;
 }
 
+.DarkMode .Link {
+  color: white;
+}
+
+.LightMode .Link {
+  color: black;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-.Link {
-  /* color: green; */
-  text-decoration: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import ToggleButton from '../ToogleButton/ToggleButton'
 import "./Header.css"
+import { ThemeContext } from '../ContextApi/ContextApi';
 
-function Header(props) {
+function Header() {
+    const theme = useContext(ThemeContext);
+    
     return (
         <div id="Header" >
-            <nav >
+            <nav className={theme}>
                 <Link className="Link" to="/">Practice</Link>
                 <Link className="Link" to="/blogs">Blogs</Link>
                 <Link className="Link" to="/connect">Connect</Link>
-                <ToggleButton handleToggle={props.handleToggle}></ToggleButton>
+                <ToggleButton></ToggleButton>
             </nav>
         </div>
     )

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import Header from './Header/Header'
 import { Outlet } from "react-router-dom";
 import { ThemeContext } from './ContextApi/ContextApi';
@@ -6,14 +6,10 @@ import { ThemeContext } from './ContextApi/ContextApi';
 
 function Layout() {
     const theme = useContext(ThemeContext);
-    const [toggle, setIsToggled] = useState(false);
-    const handleToggle = () => {
-        setIsToggled(!toggle);
-    };
 
     return (
         <div className={theme}>
-            <Header handleToggle={handleToggle}></Header>
+            <Header ></Header>
             <Outlet></Outlet>
             {/* <Sidebar></Sidebar> */}
         </div>
