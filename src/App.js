@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <ToggleContext.Provider value={{ isToggled, toggleHandler }}>
+    <ToggleContext.Provider value={{ toggleHandler }}>
       <ThemeContext.Provider value={theme}>
         <div className="App">
           <ComponentHandler />

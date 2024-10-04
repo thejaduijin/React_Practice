@@ -1,5 +1,5 @@
 import React from 'react'
-import Practice from './Practice'
+import Practice from './Practice/Practice'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NoPage from './NoPage';
 import Blogs from './Blogs';

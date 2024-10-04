@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import "./Practice.css"
 
 function Practice(props) {
     return (
-        <div style={{ fontSize: "xx-large" }}>
+        <div className='Practice'>
             Practice Component of {props.tech}
         </div>
     )
