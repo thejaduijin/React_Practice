@@ -4,19 +4,10 @@
     border-bottom: 2px solid white;
 }
 
-/* .DarkMode {
-    background-color: black;
-    color: white;
-}
-
-.LightMode {
-    background-color: wheat;
-    color: black;
-} */
-
 nav {
     display: flex;
     justify-content: flex-end;
     gap: 25px;
     margin-right: 10px;
+    align-items: center;
 }
