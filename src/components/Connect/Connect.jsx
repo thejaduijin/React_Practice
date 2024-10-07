@@ -1,8 +1,8 @@
 import React from 'react'
-
+import "./Connect.css"
 function Connect() {
   return (
-    <div style={{ color: "green", fontSize: "xx-large" }}>
+    <div className='main-outlet'>
       Let's Do it Together
     </div>
   )

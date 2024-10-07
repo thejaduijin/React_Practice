@@ -38,6 +38,17 @@
   pointer-events: none;
 }
 
+.main-outlet{
+  font-size: x-large;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: aqua;
+  width: 80%;
+  height: calc((100vh - 50px));
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

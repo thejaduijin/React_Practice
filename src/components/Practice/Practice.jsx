@@ -3,7 +3,7 @@ import "./Practice.css"
 
 function Practice(props) {
     return (
-        <div className='Practice'>
+        <div className='main-outlet'>
             Practice Component of {props.tech}
         </div>
     )

@@ -2,9 +2,9 @@ import React from 'react'
 import Practice from './Practice/Practice'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NoPage from './NoPage';
-import Blogs from './Blogs';
 import Layout from './Layout';
-import Connect from './Connect';
+import Connect from './Connect/Connect';
+import Blogs from './Blogs/Blogs';
 function ComponentHandler() {
 
     return (

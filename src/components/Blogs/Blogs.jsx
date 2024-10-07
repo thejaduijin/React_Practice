@@ -1,8 +1,8 @@
 import React from 'react'
-
+import "./Blogs.css"
 function Blogs() {
     return (
-        <div style={{ fontSize: "xx-large" }}>
+        <div className='main-outlet'>
             This is Blogs
         </div>
     )
