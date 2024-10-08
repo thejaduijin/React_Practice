@@ -3,7 +3,7 @@ import "./Connect.css"
 function Connect() {
   return (
     <div className='main-outlet'>
-      Let's Make it Together 
+      Let's Do it Together 
     </div>
   )
 }
