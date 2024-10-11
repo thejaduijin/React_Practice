@@ -1,6 +1,8 @@
-.Sidebar{
-    background-color: red;
+.Sidebar {
+    /* background-color: red; */
     width: 20%;
     font-size: x-large;
     height: calc((100vh - 50px));
+    border: 2px solid green;
+    min-width: fit-content;
 }
