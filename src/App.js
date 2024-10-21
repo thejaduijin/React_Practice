@@ -4,6 +4,7 @@ import ComponentHandler from './components/ComponentHandler';
 import { ThemeContext, ToggleContext } from './components/ContextApi/ContextApi';
 import Login from "./components/Login/Login"
 // import SignUp from './components/SignUp/SignUp';
+import AuthPage from './components/AuthPage/AuthPage';
 
 function App() {
   const [theme, setTheme] = useState('LightMode');
@@ -26,7 +27,7 @@ function App() {
         <div className="App">
           {isAuthenticated ? (<ComponentHandler />) : <Login onLoginSuccess={handleLoginSuccess} />}
           {/* {isAuthenticated ? (<ComponentHandler />) : <SignUp onLoginSuccess={handleLoginSuccess} />} */}
-
+          {/* <AuthPage onLoginSuccess={handleLoginSuccess} ></AuthPage> */}
 
         </div>
       </ThemeContext.Provider>

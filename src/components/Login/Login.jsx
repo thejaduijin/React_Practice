@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import ComponentHandler from "../ComponentHandler";
 import './Login.css';  // Import the CSS file for styling
+import { useEffect } from "react";
 
 const Login = () => {
+
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -10,6 +12,16 @@ const Login = () => {
 
     const [formErrors, setFormErrors] = useState({});
     const [submitted, setSubmitted] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");  // To handle error messages
+
+
+    // way to unmount
+    
+    // useEffect(() => {
+    //     return () => {
+    //         console.log("cleaned up");
+    //     };
+    // }, [submitted]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -35,10 +47,12 @@ const Login = () => {
         return errors;
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const errors = validate();
         if (Object.keys(errors).length === 0) {
+            // Send login data to the server
             fetch('http://localhost:5000/api/login', {
                 method: 'POST',
                 headers: {
@@ -48,8 +62,12 @@ const Login = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Login success:', data);
-                    setSubmitted(true);  // Mark the form as submitted
+                    if (data.message === 'Login successful!') {
+                        setSubmitted(true);
+                        console.log("Login success:", data);
+                    } else {
+                        setErrorMessage(data.message);  // Show error message if login fails
+                    }
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -68,7 +86,7 @@ const Login = () => {
                 <div className="login-container">
                     <div className="login-box">
                         <form onSubmit={handleSubmit}>
-                            <h2>Login</h2>
+                            <h2>LOGIN</h2>
 
                             <div className="form-group">
                                 <label>Email</label>
@@ -95,7 +113,12 @@ const Login = () => {
                             </div>
 
                             <button type="submit" className="login-btn">Login</button>
+
+                            {/* Display error message for invalid login */}
+                            {errorMessage && <p className="error">{errorMessage}</p>}
                         </form>
+
+                        {/* <p>New Here Go to SignUp</p> */}
                     </div>
                 </div>
             )}
