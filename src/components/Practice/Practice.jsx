@@ -8,8 +8,10 @@ function Practice(props) {
         <div className='main-outlet'>
             Practice Component of {props.tech}
             <p className='heading'>Let's Start</p>
-            <Stopwatch></Stopwatch> "to see the example of useEffect"
-            <Button /> "to see the example of useReducer"
+            "to see the example of useEffect"
+            <Stopwatch></Stopwatch>
+            "to see the example of useReducer"
+            <Button />
         </div>
     )
 }
