@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ComponentHandler from "../ComponentHandler";
+import './Login.css';  // Import the CSS file for styling
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -38,47 +39,65 @@ const Login = () => {
         e.preventDefault();
         const errors = validate();
         if (Object.keys(errors).length === 0) {
-            setSubmitted(true);
-            console.log("Login successful:", formData);
-            // Proceed with login process (e.g., API call)
+            fetch('http://localhost:5000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Login success:', data);
+                    setSubmitted(true);  // Mark the form as submitted
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
         } else {
             setFormErrors(errors);
         }
     };
 
+
     return (
-        <div className="login-form">
+        <div>
             {submitted ? (
-                // <h2>Login Successful!</h2>
                 <ComponentHandler></ComponentHandler>
             ) : (
-                <form onSubmit={handleSubmit}>
-                    <h2>Login</h2>
+                <div className="login-container">
+                    <div className="login-box">
+                        <form onSubmit={handleSubmit}>
+                            <h2>Login</h2>
 
-                    <div className="form-group">
-                        <label>Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                        />
-                        {formErrors.email && <p className="error">{formErrors.email}</p>}
+                            <div className="form-group">
+                                <label>Email</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    className={formErrors.email ? 'error-input' : ''}
+                                />
+                                {formErrors.email && <p className="error">{formErrors.email}</p>}
+                            </div>
+
+                            <div className="form-group">
+                                <label>Password</label>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    className={formErrors.password ? 'error-input' : ''}
+                                />
+                                {formErrors.password && <p className="error">{formErrors.password}</p>}
+                            </div>
+
+                            <button type="submit" className="login-btn">Login</button>
+                        </form>
                     </div>
-
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleInputChange}
-                        />
-                        {formErrors.password && <p className="error">{formErrors.password}</p>}
-                    </div>
-
-                    <button type="submit">Login</button>
-                </form>
+                </div>
             )}
         </div>
     );
