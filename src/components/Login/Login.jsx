@@ -53,7 +53,7 @@ const Login = () => {
         const errors = validate();
         if (Object.keys(errors).length === 0) {
             // Send login data to the server
-            fetch('http://localhost:5000/api/login', {
+            fetch('https://myapp-sepia-iota.vercel.app/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
