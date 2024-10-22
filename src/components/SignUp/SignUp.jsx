@@ -51,7 +51,7 @@ const SignUp = () => {
         const errors = validate();
         if (Object.keys(errors).length === 0) {
             // Proceed with sending data to the server
-            fetch('https://myapp-sepia-iota.vercel.app/api/signup', {
+            fetch('http://localhost:5000/api/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
