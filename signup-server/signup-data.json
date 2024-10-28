@@ -4,5 +4,17 @@
     "email": "lokendra.06.work@gmail.com",
     "password": "123456",
     "confirmPassword": "123456"
+  },
+  {
+    "name": "jadui jin",
+    "email": "thejaduijin@gmail.com",
+    "password": "123123",
+    "confirmPassword": "123123"
+  },
+  {
+    "name": "lokendra",
+    "email": "lokendrasikarwar06@gmail.com",
+    "password": "12301230",
+    "confirmPassword": "12301230"
   }
 ]

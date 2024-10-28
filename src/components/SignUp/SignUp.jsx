@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './SignUp.css';  // Import the CSS file for styling
+import ComponentHandler from "../ComponentHandler";
 
 const SignUp = () => {
     const [formData, setFormData] = useState({
@@ -75,7 +76,7 @@ const SignUp = () => {
     return (
         <div>
             {submitted ? (
-                <h2>Sign-up Successful!</h2>
+                <ComponentHandler></ComponentHandler>
             ) : (
                 <div className="signup-container">
                     <div className="signup-box">

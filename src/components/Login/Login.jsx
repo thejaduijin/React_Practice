@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ComponentHandler from "../ComponentHandler";
 import './Login.css';  // Import the CSS file for styling
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const Login = () => {
 
@@ -16,7 +16,7 @@ const Login = () => {
 
 
     // way to unmount
-    
+
     // useEffect(() => {
     //     return () => {
     //         console.log("cleaned up");
@@ -65,8 +65,12 @@ const Login = () => {
                     if (data.message === 'Login successful!') {
                         setSubmitted(true);
                         console.log("Login success:", data);
+                    } else if (data.message === 'User not found') {
+                        // Redirect to sign-up page if user not found
+                        // navigate('/signup');
+                        // Navigate to={/signup}
                     } else {
-                        setErrorMessage(data.message);  // Show error message if login fails
+                        setErrorMessage(data.message);
                     }
                 })
                 .catch((error) => {
