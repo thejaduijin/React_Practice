@@ -3,8 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    /* height: 100vh;
+    background: linear-gradient(135deg, #ff9966, #ff5e62); */
 }
 
 .signup-box {

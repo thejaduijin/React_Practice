@@ -5,6 +5,8 @@ import { ThemeContext, ToggleContext } from './components/ContextApi/ContextApi'
 import Login from "./components/Login/Login"
 // import SignUp from './components/SignUp/SignUp';
 import AuthPage from './components/AuthPage/AuthPage';
+import AuthToggle from './components/AuthToggle/AuthToggle';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [theme, setTheme] = useState('LightMode');
@@ -22,16 +24,25 @@ function App() {
   };
 
   return (
-    <ToggleContext.Provider value={{ toggleHandler }}>
-      <ThemeContext.Provider value={theme}>
-        <div className="App">
-          {isAuthenticated ? (<ComponentHandler />) : <Login onLoginSuccess={handleLoginSuccess} />}
-          {/* {isAuthenticated ? (<ComponentHandler />) : <SignUp onLoginSuccess={handleLoginSuccess} />} */}
-          {/* <AuthPage onLoginSuccess={handleLoginSuccess} ></AuthPage> */}
+    <BrowserRouter>
+      <ToggleContext.Provider value={{ toggleHandler }}>
+        <ThemeContext.Provider value={theme}>
+          <div className="App">
+            {/* <AuthToggle onLoginSuccess={true}></AuthToggle> */}
 
-        </div>
-      </ThemeContext.Provider>
-    </ToggleContext.Provider>
+            {/* {isAuthenticated ? (<ComponentHandler />) : <AuthToggle onLoginSuccess={handleLoginSuccess} />} */}
+
+            {/* {isAuthenticated ? (<ComponentHandler />) : <Login onLoginSuccess={handleLoginSuccess} />} */}
+            {/* {isAuthenticated ? (<ComponentHandler />) : <SignUp onLoginSuccess={handleLoginSuccess} />} */}
+            {/* <AuthPage onLoginSuccess={handleLoginSuccess} ></AuthPage> */}
+            <ComponentHandler />
+            {/* <AuthPage></AuthPage> */}
+
+
+          </div>
+        </ThemeContext.Provider>
+      </ToggleContext.Provider>
+    </BrowserRouter>
   );
 }
 

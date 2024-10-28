@@ -23,7 +23,7 @@ function Button() {
 
   return (
     <div>
-      <h1>Click the button to see it grow:</h1>
+      <h1>Click the button to see it grow or shrink</h1>
       <button style={{ width }} onClick={decreaseWidth}>
         I Do Something
       </button>

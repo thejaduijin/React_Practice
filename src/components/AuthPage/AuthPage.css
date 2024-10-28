@@ -12,7 +12,7 @@
 }
 
 .auth-box {
-    flex: 1;
+    /* flex: 1; */
     margin: 10px;
     padding: 20px;
     background-color: white;

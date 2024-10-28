@@ -17,7 +17,7 @@ function Practice(props) {
                     <a
                         href="https://maps.app.goo.gl/DJrN8tacMKxLS9Mz7"
                         target="_blank"
-                        class="">
+                        className="">
                         View in map
                     </a>
                 </div>

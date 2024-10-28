@@ -4,7 +4,6 @@ import './Login.css';  // Import the CSS file for styling
 // import { useEffect } from "react";
 
 const Login = () => {
-
     const [formData, setFormData] = useState({
         email: "",
         password: ""
