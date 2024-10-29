@@ -43,12 +43,10 @@ function ComponentHandler() {
     return (
         // <BrowserRouter>
             <Routes>
-                {/* Show AuthToggle if not authenticated */}
                 {!isAuthenticated ? (
                     <Route path="*" element={<AuthToggle onLoginSuccess={handleLoginSuccess} />} />
                 ) : (
                     <Route path="/" element={<Layout />}>
-                        {/* Authenticated routes */}
                         <Route path="practice" element={<Practice tech="React" />} />
                         <Route path="blogs" element={<Blogs />} />
                         <Route path="connect" element={<Connect />} />

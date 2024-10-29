@@ -4,11 +4,11 @@ import SignUp from './../SignUp/SignUp';
 import "./AuthToggle.css"
 
 const AuthToggle = ({ onLoginSuccess }) => {
-    const [isLogin, setIsLogin] = useState(true); // `true` for login view, `false` for sign-up view
+    const [isLogin, setIsLogin] = useState(true);
 
-    const handleToggle = () => {
-        setIsLogin(!isLogin); // Toggle between login and sign-up
-    };
+    // const handleToggle = () => {
+    //     setIsLogin(!isLogin); 
+    // };
 
     return (
         <div className="auth-toggle">
@@ -27,8 +27,6 @@ const AuthToggle = ({ onLoginSuccess }) => {
                         Sign Up
                     </button>
                 </div>
-
-                {/* Render Login or SignUp component based on the `isLogin` state */}
                 <div className="auth-form">
                     {isLogin ? (
                         <Login onLoginSuccess={onLoginSuccess} />

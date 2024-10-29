@@ -3,7 +3,7 @@ import ComponentHandler from "../ComponentHandler";
 import './Login.css';  // Import the CSS file for styling
 // import { useEffect } from "react";
 
-const Login = () => {
+const Login = ({onLoginSuccess}) => {
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -63,6 +63,7 @@ const Login = () => {
                 .then(data => {
                     if (data.message === 'Login successful!') {
                         setSubmitted(true);
+                        onLoginSuccess();
                         console.log("Login success:", data);
                     } else if (data.message === 'User not found') {
                         // Redirect to sign-up page if user not found
