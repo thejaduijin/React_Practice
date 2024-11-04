@@ -4,9 +4,9 @@ import ToggleButton from '../ToogleButton/ToggleButton'
 import "./Header.css"
 import { ThemeContext } from '../ContextApi/ContextApi';
 
-function Header() {
+function Header({ onLogout }) {
     const theme = useContext(ThemeContext);
-    
+
     return (
         <div id="Header" >
             <nav className={theme}>
@@ -14,6 +14,7 @@ function Header() {
                 <Link className="Link" to="/blogs">Blogs</Link>
                 <Link className="Link" to="/connect">Connect</Link>
                 <ToggleButton></ToggleButton>
+                <button onClick={onLogout}>Logout</button>
             </nav>
         </div>
     )
