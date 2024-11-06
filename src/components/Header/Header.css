@@ -11,3 +11,9 @@ nav {
     margin-right: 10px;
     align-items: center;
 }
+
+button {
+    padding: 5px;
+    border-radius: 4px;
+    background-color: aqua;
+}

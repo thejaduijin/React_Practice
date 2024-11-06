@@ -29,9 +29,19 @@
   color: white;
 }
 
-.LightMode .Link {
+.LightMode .Link  {
   color: black;
 }
+
+
+/* .DarkMode button {
+  color: white;
+}
+
+.LightMode button  {
+  color: black;
+} */
+
 
 .App-logo {
   height: 40vmin;
