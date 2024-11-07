@@ -2,6 +2,7 @@ import React from 'react';
 import "./Practice.css"
 import Stopwatch from '../Stopwatch/Stopwatch';
 import Button from '../Button/Button';
+import GetLocation from '../Location/GetLocation';
 
 function Practice(props) {
     return (
@@ -13,14 +14,7 @@ function Practice(props) {
                 <Stopwatch></Stopwatch>
                 "to see the example of useReducer"
                 <Button />
-                <div>
-                    <a
-                        href="https://maps.app.goo.gl/DJrN8tacMKxLS9Mz7"
-                        target="_blank"
-                        className="">
-                        View in map
-                    </a>
-                </div>
+                <GetLocation></GetLocation>
             </div>
         </>
     )
