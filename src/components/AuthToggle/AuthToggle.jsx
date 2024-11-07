@@ -31,7 +31,7 @@ const AuthToggle = ({ onLoginSuccess }) => {
                     {isLogin ? (
                         <Login onLoginSuccess={onLoginSuccess} />
                     ) : (
-                        <SignUp />
+                        <SignUp onLoginSuccess={onLoginSuccess} />
                     )}
                 </div>
             </div>

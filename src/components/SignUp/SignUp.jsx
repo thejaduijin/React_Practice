@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './SignUp.css';  // Import the CSS file for styling
 import ComponentHandler from "../ComponentHandler";
 
-const SignUp = () => {
+const SignUp = ({ onLoginSuccess }) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -50,7 +50,7 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const errors = validate();
-        
+
         if (Object.keys(errors).length === 0) {
             // Send signup data to the server
             fetch('https://my-app-server-mu.vercel.app/api/signup', { // Use HTTPS
@@ -68,6 +68,7 @@ const SignUp = () => {
                 })
                 .then(data => {
                     console.log('Success:', data);
+                    onLoginSuccess();
                     setSubmitted(true);  // Mark the form as submitted
                 })
                 .catch((error) => {
@@ -78,7 +79,7 @@ const SignUp = () => {
             setFormErrors(errors);
         }
     };
-    
+
 
     return (
         <div>
