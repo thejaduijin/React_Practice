@@ -50,28 +50,35 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const errors = validate();
+        
         if (Object.keys(errors).length === 0) {
-            // Proceed with sending data to the server
-            fetch('http://localhost:5000/api/signup', {
+            // Send signup data to the server
+            fetch('https://my-app-server-mu.vercel.app/api/signup', { // Use HTTPS
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
             })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     console.log('Success:', data);
                     setSubmitted(true);  // Mark the form as submitted
                 })
                 .catch((error) => {
                     console.error('Error:', error);
+                    // setErrorMessage('An error occurred while processing your request.');
                 });
         } else {
             setFormErrors(errors);
         }
     };
-
+    
 
     return (
         <div>

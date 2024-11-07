@@ -3,7 +3,7 @@ import ComponentHandler from "../ComponentHandler";
 import './Login.css';  // Import the CSS file for styling
 // import { useEffect } from "react";
 
-const Login = ({onLoginSuccess}) => {
+const Login = ({ onLoginSuccess }) => {
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -47,12 +47,35 @@ const Login = ({onLoginSuccess}) => {
     };
 
 
+    // async function loginUser(loginData) {
+    //     try {
+    //         const response = await fetch('https://my-app-server-mu.vercel.app/api/login', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(loginData),
+    //         });
+
+    //         const result = await response.json();
+    //         if (response.ok) {
+    //             console.log('Login successful:', result);
+    //         } else {
+    //             console.error('Login failed:', result.message);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error during login:', error);
+    //     }
+    // }
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const errors = validate();
+
         if (Object.keys(errors).length === 0) {
             // Send login data to the server
-            fetch('http://localhost:5000/api/login', {
+            fetch('https://my-app-server-mu.vercel.app/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -67,19 +90,20 @@ const Login = ({onLoginSuccess}) => {
                         console.log("Login success:", data);
                     } else if (data.message === 'User not found') {
                         // Redirect to sign-up page if user not found
-                        // navigate('/signup');
-                        // Navigate to={/signup}
+                        window.location.href = '/signup'; // Redirects user to signup page
                     } else {
                         setErrorMessage(data.message);
                     }
                 })
                 .catch((error) => {
                     console.error('Error:', error);
+                    setErrorMessage('An error occurred while processing your request.');
                 });
         } else {
             setFormErrors(errors);
         }
     };
+
 
 
     return (
