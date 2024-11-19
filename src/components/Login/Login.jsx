@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ComponentHandler from "../ComponentHandler";
 import './Login.css';  // Import the CSS file for styling
+import OtpLogin from "../OtpLogin/OtpLogin";
 // import { useEffect } from "react";
 
 const Login = ({ onLoginSuccess }) => {
@@ -148,7 +149,9 @@ const Login = ({ onLoginSuccess }) => {
 
                         {/* <p>New Here Go to SignUp</p> */}
                     </div>
+                    <OtpLogin></OtpLogin>
                 </div>
+
             )}
         </div>
     );
